@@ -19,7 +19,7 @@ function App() {
             <div className="text-center mt-16">
               <button
                 onClick={() => signOut(auth)}
-                class="btn btn-error btn-outline  absolute right-12 top-12"
+                className="btn btn-error btn-outline  absolute right-12 top-12"
               >
                 Log Out
               </button>

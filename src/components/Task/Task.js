@@ -3,7 +3,6 @@ import { EyeIcon, TrashIcon } from "@heroicons/react/solid";
 const Task = () => {
   const [checked, setChecked] = useState(false);
   return (
-    //   for non active state => bg-[#3359caad] line-through bg-[#3359ca4a]
     <div
       className={`form-control max-w-md mx-auto mb-3  rounded-xl ${
         checked ? "bg-[#a42c4e7a] line-through opacity-50" : "bg-[#2c4aa49c]"
