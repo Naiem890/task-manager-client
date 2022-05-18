@@ -3,16 +3,16 @@ import React from "react";
 const ModalForm = () => {
   return (
     <div>
-      <input type="checkbox" id="form-modal" class="modal-toggle" />
-      <label for="form-modal" class="modal cursor-pointer text-left">
-        <label class="modal-box relative" for="">
+      <input type="checkbox" id="form-modal" className="modal-toggle" />
+      <label htmlFor="form-modal" className="modal cursor-pointer text-left">
+        <label className="modal-box relative" htmlFor="">
           <label
-            for="form-modal"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
+            htmlFor="form-modal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <h3 class="text-lg font-bold">Add New Task</h3>
+          <h3 className="text-lg font-bold">Add New Task</h3>
           <form className="flex flex-col  items-center mt-8">
             <input
               type="text"

@@ -16,7 +16,7 @@ const Task = () => {
           type="checkbox"
           checked={checked}
           className="checkbox "
-          onClick={() => setChecked(!checked)}
+          onChange={() => setChecked(!checked)}
         />
         <p
           className={`text-left leading-normal font-semibold ${
