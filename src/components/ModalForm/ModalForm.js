@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const ModalForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -14,23 +15,32 @@ const ModalForm = () => {
       userEmail: user.email,
     };
 
-    fetch("http://localhost:5000/task/", {
+    fetch("https://infinite-forest-86486.herokuapp.com/task/", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ task }),
+      body: JSON.stringify(task),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        toast.success("One task added succesfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       })
       .catch((error) => {
         console.error("Error:", error);
+        toast.error("Error:", error);
       });
-    // await console.log(task);
-    // reset();
-    // document.getElementById("form-modal").checked = false;
+    reset();
+    document.getElementById("form-modal").checked = false;
   };
   return (
     <div>
@@ -60,7 +70,7 @@ const ModalForm = () => {
               placeholder="Task Description"
             ></textarea>
             <button
-              for="form-modal"
+              htmlFor="form-modal"
               type="submit"
               className="btn btn-primary mt-6 max-w-md w-full"
             >

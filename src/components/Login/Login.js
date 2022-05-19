@@ -15,7 +15,6 @@ const Login = () => {
   if (user) {
     navigate("/");
   }
-  console.log(error);
   return (
     <div className="grid place-content-center text-center min-h-screen -mt-7">
       <img src={loginImage} alt="" className="max-w-sm mx-auto" />

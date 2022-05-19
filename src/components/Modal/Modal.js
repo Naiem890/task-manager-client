@@ -1,6 +1,8 @@
 import React from "react";
 
-const Modal = () => {
+const Modal = ({ taskDetails }) => {
+  const { taskName, taskDescription } = taskDetails;
+  // console.log(taskDetails);
   return (
     <div>
       <input type="checkbox" id="task-details-modal" className="modal-toggle" />
@@ -12,13 +14,8 @@ const Modal = () => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">
-            Congratulations random Interner user!
-          </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <h3 className="text-lg font-bold">{taskName}</h3>
+          <p className="py-4">{taskDescription}</p>
         </label>
       </label>
     </div>
